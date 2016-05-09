@@ -38,6 +38,7 @@ PRODUCT_SYSTEM_PROPERTY_BLACKLIST := ro.product.model ro.sf.lcd_density
 TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 720
 
+$(call inherit-product, frameworks/native/build/phone-hdpi-2048-dalvik-heap.mk)
 $(call inherit-product, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
 
 # Audio configuration
@@ -65,8 +66,6 @@ PRODUCT_PACKAGES += \
 
 # Charger
 ADDITIONAL_DEFAULT_PROPERTIES += \
-    ro.usb.id.midi=90BA \
-    ro.usb.id.midi_adb=90BB \
     ro.usb.id.mtp=F003 \
     ro.usb.id.mtp_adb=9039 \
     ro.usb.id.ptp=904D \
@@ -75,6 +74,8 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.usb.id.ums_adb=9015 \
     ro.usb.vid=05c6
 
+<<<<<<< HEAD
+=======
 # libhealthd library as the supplement of off-mode charging
 PRODUCT_PACKAGES += \
     libhealthd.tomato
@@ -83,6 +84,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     YUDoze
 
+>>>>>>> 765fa10... YUDoze: Add service for using proximity sensor for wake-up
 # GPS
 PRODUCT_PACKAGES += \
     gps.msm8916
